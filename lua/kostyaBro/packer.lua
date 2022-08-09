@@ -29,6 +29,11 @@ return require('packer').startup(
             run = 'yarn install --frozen-lockfile',
         }
 
+        use {
+            'nvim-telescope/telescope.nvim', tag = '0.1.0',
+            requires = { {'nvim-lua/plenary.nvim'} }
+        }
+
         -- Golang.
         use 'fatih/vim-go'
 

@@ -2,8 +2,16 @@ local nnoremap = require("kostyaBro.keymap").nnoremap
 
 nnoremap("<leader>pv", "<cmd>Ex<CR>")
 
+nnoremap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<cr>")
+nnoremap("<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
+nnoremap("<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>")
+nnoremap("<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>")
+
+-- vim.g.go_fmt_command = 'gofmt'
+
 vim.cmd([[
-    let g:go_def_mapping_enabled = 0 " Disable vim-go.
+    let g:go_fmt_command = 'gofmt'
+    " let g:go_def_mapping_enabled = 0 " Disable vim-go.
 
     " Some servers have issues with backup files, see #649.
     set nobackup
@@ -136,22 +144,22 @@ vim.cmd([[
     " provide custom statusline: lightline.vim, vim-airline.
     set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
     
-    " Mappings for CoCList
-    " Show all diagnostics.
-    nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-    " Manage extensions.
-    nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-    " Show commands.
-    nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-    " Find symbol of current document.
-    nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-    " Search workspace symbols.
-    nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-    " Do default action for next item.
-    nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-    " Do default action for previous item.
-    nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-    " Resume latest coc list.
-    nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+   " " Mappings for CoCList
+   " " Show all diagnostics.
+   " nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+   " " Manage extensions.
+   " nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+   " " Show commands.
+   " nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+   " " Find symbol of current document.
+   " nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+   " " Search workspace symbols.
+   " nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+   " " Do default action for next item.
+   " nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+   " " Do default action for previous item.
+   " nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+   " " Resume latest coc list.
+   " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 ]])
 
