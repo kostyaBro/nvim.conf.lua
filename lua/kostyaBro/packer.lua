@@ -80,14 +80,33 @@ return require('packer').startup(
         }
 
         -- Git. https://www.chrisatmachine.com/blog/category/neovim/12-git-integration
-        use 'mhinz/vim-signify'
-        use 'tpope/vim-fugitive'
-        use 'junegunn/gv.vim' -- write :GV
+        use ('mhinz/vim-signify')
+        use ('tpope/vim-fugitive')
+        use ('junegunn/gv.vim') -- write :GV
         -- use 'lewis6991/gitsigns.nvim' -- useful but need to set up
 
-        -- OLD plugins.
         -- Golang. 
-        -- use 'fatih/vim-go' // TODO: think about using this plugin.
+        use ('fatih/vim-go')
+
+        -- File tree
+        use ('nvim-tree/nvim-tree.lua')
+        use ('nvim-tree/nvim-web-devicons')
+
+        -- autosave
+        use({
+          "okuuva/auto-save.nvim",
+          config = function()
+            require("auto-save").setup {}
+          end,
+        })
+
+        -- markdown preview install without yarn or npm
+        use({
+            "iamcco/markdown-preview.nvim",
+            run = function() vim.fn["mkdp#util#install"]() end,
+        })
+
+        -- OLD plugins.
 
         -- use {
         --     'neoclide/coc.nvim',
